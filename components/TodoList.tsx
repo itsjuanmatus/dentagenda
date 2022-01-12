@@ -1,12 +1,8 @@
-import { db } from '../firebase';
 import {
-  onSnapshot,
-  collection,
-  orderBy,
-  query,
-  addDoc,
+  addDoc, collection, onSnapshot, query
 } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
+import { db } from '../services/firebase';
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
