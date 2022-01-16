@@ -1,15 +1,18 @@
 import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import { app } from '../firebase/clientApp';
-import { getAuth, GithubAuthProvider } from 'firebase/auth';
+import { getAuth, GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const uiConfig = {
   signInSuccessUrl: '/',
-  signInOptions: [GithubAuthProvider.PROVIDER_ID],
+  signInOptions: [
+    GithubAuthProvider.PROVIDER_ID,
+    GoogleAuthProvider.PROVIDER_ID,
+  ],
 };
 
-export default function SignInScreen() {
-    const auth = getAuth(app)
+export default function Auth() {
+  const auth = getAuth(app);
   return (
     <div className="w-full m-auto min-h-screen flex flex-col">
       <h1>Login</h1>
